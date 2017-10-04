@@ -21,7 +21,7 @@ def hello(): # Name of the method
     cur.execute('''update student set studentName = 'Updated Name' WHERE studentName="Student1" ''')# update student record
     cur.execute('''delete from student where studentName= 'Updated Name''') #delete from table
     rv = cur.fetchall() #Retreive all rows returend by the SQL statment
-    return app.send_static_file('static.html')#return a static html file
+    return render_template('static.html')#return a static html file
     return str(rv)      #Return the data in a string format
 if __name__ == "__main__":
         app.run(host='0.0.0.0', port='5000'); #Run the flask app at port 50
